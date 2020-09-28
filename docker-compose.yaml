@@ -1,0 +1,11 @@
+version: '2'
+services:
+  tengine_server:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./conf/openresty.conf:/usr/local/nginx/conf/nginx.conf
+    mem_limit: 32MB
