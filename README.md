@@ -3,7 +3,7 @@ Testing tengine's dynamic upstream module
 
 When using [upstream dynamic's tengine module](https://tengine.taobao.org/document/http_upstream_dynamic.html), `upstream_response_time` and `upstream_addr` nginx variables behaves extrangely.
 
-Despite the fallback configuration I use, the `upstream_response_time` and `upstream_addr` register two values, even if the connection was kept alive.  
+Despite the fallback configuration I use, the `upstream_response_time` and `upstream_addr` register two values, even if was only one request and the connection was kept alive.  
 Note that I have set `proxy_next_upstream off;` to avoid retries on failed upstream connections. 
 
 ### Example Configuration
