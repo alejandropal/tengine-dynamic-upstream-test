@@ -66,9 +66,14 @@ tengine_server_1  | GET /test-dynamic  [upstream_response_time:0.002, 0.027] [up
 
 3. These tests were run with tengine 2.3.2.
 
-   tengine 2.2.1 logs differently (- instead of a value)
-
+tengine 2.2.1 logs differently (- instead of a value)
 ```
 tengine_server_1  | GET /test-simple   [upstream_response_time:0.005] [upstream_addr:104.18.18.22:80] [status:200] [request_time:0.008]
-tengine_server_1  | GET /test-dynamic  [upstream_response_time:**-**, 0.024] [upstream_addr:, 172.21.0.5:80] [status:200] [request_time:0.024]
+tengine_server_1  | GET /test-dynamic  [upstream_response_time:-, 0.024] [upstream_addr:, 172.21.0.5:80] [status:200] [request_time:0.024]
+```
+
+tengine 2.3.2
+```
+tengine_server_1  | GET /test-simple   [upstream_response_time:0.028] [upstream_addr:216.58.202.46:80] [status:404] [request_time:0.028]
+tengine_server_1  | GET /test-dynamic  [upstream_response_time:0.002, 0.027] [upstream_addr:, 216.58.202.46:80] [status:404] [request_time:0.000]
 ```
